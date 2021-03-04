@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{65897F88-D657-4008-B3F8-D8F81E78B587}</ProjectGuid>
+    <ProjectGuid>{6B7CD6F9-B2D6-4C31-85EC-40F75690C7A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>VarTestApp</RootNamespace>
-    <AssemblyName>VarTestApp</AssemblyName>
+    <RootNamespace>VariableTest_App</RootNamespace>
+    <AssemblyName>VariableTest_App</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
