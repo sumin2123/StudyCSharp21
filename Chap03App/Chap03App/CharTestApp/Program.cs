@@ -15,8 +15,9 @@ namespace CharTestApp
             // 문자열
             string str1 = "\a\tHello, \tWorld!";
             Console.WriteLine(str1);
+            Console.WriteLine($"{str1}");
 
-            bool isCorrect = true;
+            bool isCorrect = false; //true
             if  (isCorrect)
             {
                 Console.WriteLine("참입니다");
