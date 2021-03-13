@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace AddressBookApp
 {
@@ -9,7 +10,7 @@ namespace AddressBookApp
         {
             try
             {
-                AddressManager manager = new AddressManager
+                AddressManager manager = new AddressManager()
                 {
                     listAddress = new List<AddressInfo>()
                 };
@@ -52,19 +53,19 @@ namespace AddressBookApp
                             break;
                         case 6: // 종료
                             fileManager.WriteData(manager.listAddress);
-                            Environment.Exit(0);
+                            Environment.Exit(0); // (0) 안전하게 종료
                             break;
-                        default: // 0은 여기서처리
-                                 // 아무 로직 없음
+                        default: // 0은 default에서 처리
+                                 // 로직 존재하지 않음
                             break;
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"예외발생 : {ex.Message}");
+
+                throw;
             }
         }
     }
 }
-
