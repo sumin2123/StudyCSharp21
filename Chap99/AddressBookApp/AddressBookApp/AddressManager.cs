@@ -25,8 +25,7 @@ namespace AddressBookApp
             //메뉴번호 입력
             Console.Write("메뉴를 선택하세요 >>> ");
             string input = Console.ReadLine();
-            int Result = 0;
-            int.TryParse(input, out Result); //값이 들어가면 읽고 만족하지 않으면 0으로 나온다
+            int.TryParse(input, out int Result); //값이 들어가면 읽고 만족하지 않으면 0으로 나온다
             if (!(Result > 0 && Result < 7))  //1~6이외의 값은 아닌 값이 댄다
                 Result = 0;
 
@@ -143,28 +142,32 @@ namespace AddressBookApp
             Console.WriteLine("----------------------------------------");
             Console.Write("이름입력 : ");
             string name = Console.ReadLine();
-            int idx = 0;
+            int idx2 = 0;
             bool isFind = false; //검색을 했을때 찾는 이름이 있는가?
             foreach (var item in listAddress)
             {
                 if (item.Name == name) //위의 Name이랑 name2 같은지 물어봄
                 {
                     isFind = true; //찾음
-                    Console.WriteLine($"[{idx}]----------------------------------------");
+                    Console.WriteLine($"[{idx2}]----------------------------------------");
                     Console.WriteLine($"이름 : {item.Name}");
                     Console.WriteLine($"전화 : {item.Phone}");
                     Console.WriteLine($"주소 : {item.Address}");
                     Console.WriteLine("----------------------------------------");
                     Console.Write("삭제 하시겠습니까? [y/n]");
                     string answer = Console.ReadLine(); // y/n
-                    if (answer.ToUpper() == "y")
-                        listAddress.RemoveAt(idx); //주소 검색에서 계속 돌다가 "y" yse 가 나오면 지운다
-                    Console.WriteLine("삭제했습니다.");
-                    break; //foreach 를 빠져나가는것
+                    if (answer.ToUpper() == "Y")
+                    {
+                        listAddress.RemoveAt(idx2); //주소 검색에서 계속 돌다가 "y" yse 가 나오면 지운다
+                        Console.WriteLine("삭제했습니다.");
+                    } 
+                        break; //foreach 를 빠져나가는것
                 }
-                idx++;
+                idx2++;
 
             }
+
+
             if (isFind == false) //false가 나오묜 "검색결과가 없습니다"로 나온다
             {
                 Console.WriteLine("검색결과가 없습니다.");
